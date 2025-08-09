@@ -1,0 +1,65 @@
+import cv2
+import os
+
+# ==== CONFIGURATION ====
+root_input_folder = "raw videos"
+output_folder = "output_frames"
+resize_width = 640
+resize_height = 360
+frames_to_extract = 5
+video_extensions = (".mp4", ".avi", ".mov", ".mkv")
+
+os.makedirs(output_folder, exist_ok=True)
+
+# ==== PROCESS ALL SUBFOLDERS ====
+for subfolder in os.listdir(root_input_folder):
+    subfolder_path = os.path.join(root_input_folder, subfolder)
+
+    if not os.path.isdir(subfolder_path):
+        continue  # skip non-folder items
+
+    for filename in os.listdir(subfolder_path):
+        if filename.lower().endswith(video_extensions):
+            video_path = os.path.join(subfolder_path, filename)
+            cap = cv2.VideoCapture(video_path)
+
+            if not cap.isOpened():
+                print(f"❌ Cannot open {filename}")
+                continue
+
+            total_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
+            interval = total_frames // (frames_to_extract + 1)
+
+            print(f"Processing {filename} ({total_frames} frames) in {subfolder}")
+
+            # Create matching output subfolder
+            video_name = os.path.splitext(filename)[0]
+            video_output_dir = os.path.join(output_folder, subfolder, video_name)
+            os.makedirs(video_output_dir, exist_ok=True)
+
+            for i in range(1, frames_to_extract + 1):
+                frame_index = i * interval
+                cap.set(cv2.CAP_PROP_POS_FRAMES, frame_index)
+                ret, frame = cap.read()
+
+                if not ret:
+                    print(f"⚠ Could not read frame {frame_index} in {filename}")
+                    continue
+
+                # Resize
+                resized_frame = cv2.resize(frame, (resize_width, resize_height), interpolation=cv2.INTER_AREA)
+
+                # Save original
+                output_name = f"frame_{i}.jpg"
+                output_path = os.path.join(video_output_dir, output_name)
+                cv2.imwrite(output_path, resized_frame)
+
+                # Save mirrored
+                mirrored_frame = cv2.flip(resized_frame, 1)  # flip around y-axis
+                mirrored_name = f"frame_{i}_mirror.jpg"
+                mirrored_path = os.path.join(video_output_dir, mirrored_name)
+                cv2.imwrite(mirrored_path, mirrored_frame)
+
+            cap.release()
+
+print("✅ Done extracting frames and mirrored versions!")
