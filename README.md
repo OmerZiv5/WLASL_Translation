@@ -30,5 +30,6 @@ Learning rate of both networks: 10^-4
 Optimizer: Adam
 Number of frames per video: 5
 Range of frame sampling: 5
-Color jittering parameters:
-
+Color jittering parameters: brightness=0.2, contrast=0.2, saturation=0.2, hue=0.1
+Resizing new size: 224, 224
+Normalization parameters: mean=[0.485,0.456,0.406], std=[0.229,0.224,0.225]
