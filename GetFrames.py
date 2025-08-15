@@ -15,7 +15,7 @@ frames_to_extract = 5
 video_extensions = (".mp4", ".avi", ".mov", ".mkv")
 num_repeats = 25
 frame_offset_range = 5  # ± this many frames
-saturation_scale = 1.5
+
 
 os.makedirs(output_folder, exist_ok=True)
 
