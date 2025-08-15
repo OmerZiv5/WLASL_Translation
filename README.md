@@ -29,8 +29,8 @@ If you chose "isolated" run the file called "IsoNetwork.py", to run this file yo
 the path can be any path in your computer.
 
 
-**Hyper parameters:**
-Learning rate of both networks: 10^-4\n
+**Hyper parameters:**<br/>
+Learning rate of both networks: 10^-4 <br/>
 Optimizer: Adam
 
 Number of frames per video: 5
