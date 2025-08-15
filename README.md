@@ -29,7 +29,7 @@ If you chose "isolated" run the file called "IsoNetwork.py", to run this file yo
 the path can be any path in your computer.
 
 
-# **Hyper parameters:**<br/>
+### **Hyper parameters:**<br/>
 Learning rate: 10^-4 <br/>
 Optimizer: Adam <br/>
 Number of frames per video: 5 <br/>
@@ -39,7 +39,7 @@ Resizing new size: 224, 224 <br/>
 Normalization parameters: mean=[0.485,0.456,0.406], std=[0.229,0.224,0.225] <br/>
 Number of repeats: 25 (meaning how many times we are sampling 5 slightly different frames from each video) <br/>
 
-# **Credits:**<br/>
+### **Credits:**<br/>
 Omer Ziv - omer-ziv@campus.technion.ac.il <br/>
 Raviv Segal raviv.s@campus.technion.ac.il <br/>
 
