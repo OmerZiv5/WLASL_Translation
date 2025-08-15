@@ -1,3 +1,5 @@
+**ASL2TEXT**
+
 This project is an end‑to‑end pipeline to translate isolated American Sign Language (ASL) words into English labels using the WLASL dataset. This repository contains three Python entry points:
 
 GetFrames.py – converts raw WLASL videos into fixed‑length frame samples (plus optional frame‑difference images) in a class‑organized folder tree.
@@ -27,7 +29,7 @@ If you chose "isolated" run the file called "IsoNetwork.py", to run this file yo
 the path can be any path in your computer.
 
 
-Hyper parameters:
+**Hyper parameters:**
 Learning rate of both networks: 10^-4
 
 Optimizer: Adam
@@ -44,7 +46,8 @@ Normalization parameters: mean=[0.485,0.456,0.406], std=[0.229,0.224,0.225]
 
 Number of repeats: 25 (meaning how many times we are sampling 5 slightly different frames from each video)
 
-Credits:
+**Credits:**
+
 Omer Ziv - omer-ziv@campus.technion.ac.il
 Raviv Segal raviv.s@campus.technion.ac.il
 
