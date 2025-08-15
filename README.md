@@ -23,3 +23,12 @@ itself so make sure that this is indeed the case. You need to change in line 78 
 frames you want to train on.
 If you chose "isolated" run the file called "IsoNetwork.py", to run this file you need to change the paths in lines 88-89 to be the path to your train frames in line 88 and test frames in line 89
 the path can be any path in your computer.
+
+
+Hyper parameters:
+Learning rate of both networks: 10^-4
+Optimizer: Adam
+Number of frames per video: 5
+Range of frame sampling: 5
+Color jittering parameters:
+
