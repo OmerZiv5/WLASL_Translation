@@ -73,7 +73,7 @@ def preprocess():
                     cap.set(cv2.CAP_PROP_POS_FRAMES, frame_index)
                     ret, frame = cap.read()
                     if not ret:
-                        print(f"⚠ Could not read frame {frame_index} in {filename}")
+                        print(f"Could not read frame {frame_index} in {filename}")
                         continue
 
                     processed_frame = frame #boost_saturation_and_grayscale(frame)
