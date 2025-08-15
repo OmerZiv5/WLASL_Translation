@@ -6,6 +6,8 @@ IsoNetwork.py – trains a ResNet18+GRU classifier on pre‑split datasets (e.g.
 
 NonIsoNetwork.py – performs an internal stratified split (train/test) from a single frames root and trains the same model.
 
+ASL2TEXT_Project_Report.pdf - the accompanying project report, detailing our process and considerations.
+
 The core idea: the project takes the raw WLASL videos, extracts 5 frames out of each video in equal intervals and repeats this process with a random small offset several times to create a larger
 dataset out of the available videos.
 Then the model (being either the non-isolated model or the isolated one) take the relevant folders and trains on them to teach itself how to classify the frames (extracted from the original
@@ -27,10 +29,23 @@ the path can be any path in your computer.
 
 Hyper parameters:
 Learning rate of both networks: 10^-4
+
 Optimizer: Adam
+
 Number of frames per video: 5
+
 Range of frame sampling: ±5
+
 Color jittering parameters: brightness=0.2, contrast=0.2, saturation=0.2, hue=0.1
+
 Resizing new size: 224, 224
+
 Normalization parameters: mean=[0.485,0.456,0.406], std=[0.229,0.224,0.225]
+
 Number of repeats: 25 (meaning how many times we are sampling 5 slightly different frames from each video)
+
+Credits:
+Omer Ziv - omer-ziv@campus.technion.ac.il
+Raviv Segal raviv.s@campus.technion.ac.il
+
+August 2025
