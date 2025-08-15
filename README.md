@@ -30,8 +30,7 @@ the path can be any path in your computer.
 
 
 **Hyper parameters:**
-Learning rate of both networks: 10^-4
-
+Learning rate of both networks: 10^-4\n
 Optimizer: Adam
 
 Number of frames per video: 5
