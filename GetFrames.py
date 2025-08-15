@@ -47,12 +47,12 @@ def preprocess():
 
             cap = cv2.VideoCapture(video_path)
             if not cap.isOpened():
-                print(f"❌ Cannot open {filename}")
+                print(f" Cannot open {filename}")
                 continue
 
             total_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
             if total_frames <= frames_to_extract:
-                print(f"⚠ Not enough frames in {filename}")
+                print(f" Not enough frames in {filename}")
                 cap.release()
                 continue
 
@@ -84,7 +84,7 @@ def preprocess():
 
             cap.release()
 
-    print("✅ Done generating samples!")
+    print("Done generating samples!")
 
 
 def clean_and_rename_categories(root_dir, min_files=5):
@@ -194,7 +194,7 @@ def generate_frame_differences(input_root, output_root):
                 diff_name = f"diff_{i+1}.jpg"
                 cv2.imwrite(os.path.join(out_sample_path, diff_name), diff_enhanced)
 
-    print(f"✅ Frame differences generated in: {output_root}")
+    print(f"Frame differences generated in: {output_root}")
 
 
 preprocess()
