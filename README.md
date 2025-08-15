@@ -1,4 +1,4 @@
-#**ASL2TEXT**
+# **ASL2TEXT**
 
 This project is an end‑to‑end pipeline to translate isolated American Sign Language (ASL) words into English labels using the WLASL dataset. This repository contains three Python entry points:
 
